@@ -20,6 +20,19 @@ body {
   text-align: center;
 }
 
+#navbar ul {
+  list-style: none;
+}
+
+#navbar li {
+  display: inline;
+  padding-right: 20em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  vertical-align: center;
+}
+
 .clear {
   clear: both;
 }

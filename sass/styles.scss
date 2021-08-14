@@ -14,6 +14,18 @@ body{
     @include flexCenter();
 }
 
+#navbar ul{
+    list-style: none;
+    
+  }
+  #navbar li{
+    display: inline;
+    padding-right: 20em;
+    justify-content: center;
+    vertical-align: center;
+
+  }
+
 .clear {
     clear: both;
 }
