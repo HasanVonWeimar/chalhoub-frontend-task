@@ -1,0 +1,19 @@
+
+@mixin flexCenter {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header{
+    @include flexCenter();
+}
+
+body{
+    @include flexCenter();
+}
+
+.clear {
+    clear: both;
+}
