@@ -2,6 +2,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Kenzo eStore</title>
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 		<link rel="stylesheet" href="../sass/styles.css">
 	</head>
 	
@@ -27,7 +28,12 @@
 		<main>
 
 			<div id="search-area">
-				<input id="search-box" type="text" value="Search">
+				<form action="#" method ="GET" id="search-form">
+					<input id="search-box" type="text" placeholder="Search">
+					<button type="submit" class="search-button">
+						<img src="../assets/search.png">
+				 	 </button>
+				</form>
 			</div>
 
 			<div id="product-image">
@@ -35,19 +41,27 @@
 			</div>
 
 			<div id="product-details">
-				<form action="#">
-  					<p>Available Sizes:</p>
-  						<input type="radio" id="s" name="sizes" value="s">
-  						<label for="s">S</label><br>
-  						<input type="radio" id="m" name="sizes" value="m">
-						<label for="m">M</label><br>
-						<input type="radio" id="l" name="sizes" value="l">
-						<label for="l">L</label>
-						<input type="radio" id="xl" name="sizes" value="xl">
-						<label for="xl">XL</label>
+
+				<p id="product-title">Tiger Medium Red</p>
+				<p id="product-price">AED 250</p><br>
+
+				<form id="size-form" action="#">
+  					<span>Available Sizes:</span>  	
+  						<label for="s">S
+							<input type="radio" id="s" name="sizes" value="s">
+						 </label>
+						<label for="m">M
+							 <input type="radio" id="m" name="sizes" value="m">
+						</label>
+						<label for="l">L
+							<input type="radio" id="l" name="sizes" value="l">
+						</label>
+						<label for="xl">XL
+							<input type="radio" id="xl" name="sizes" value="xl">
+						</label>
 				</form>
 
-				<form action="#">
+				<form id="color-form" action="#">
 					<p>Colors:</p>
 						<label>
 							<input type="radio" id="black" name="colors">
