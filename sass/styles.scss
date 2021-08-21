@@ -1,12 +1,19 @@
 $image-width: 150px;
 $image-height: 150px;
 $font: Arial, Helvetica, sans-serif;
+$inner-width: 80%;
+$light-gray: rgb(151, 145, 145);
+$heading-color: rgb(80, 77, 77);
 
 @mixin flexCenter {
     //display: block;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+@mixin capitalise {
+    text-transform: uppercase;
 }
 
 header{
@@ -26,7 +33,7 @@ body{
 
 #search-box {
 
-    width: 90%;
+    width: $inner-width;
     border-radius: 20px;
     padding: 10px 35px 10px 15px;
     font-size:2em;
@@ -53,7 +60,7 @@ body{
  
 #product-image img {
 
-    width: 75%;
+    width: $inner-width;
 
 }
 
@@ -87,7 +94,7 @@ body{
 
     #product-title {
 
-        font-weight: bold;
+        color: $heading-color;
     }
 
     #product-price {
@@ -101,14 +108,14 @@ body{
     form {
 
         list-style: none;
-        color: lightgray;
+        color: $light-gray;
 
         input {
             visibility: hidden;
         }
 
         img {
-            border: 4px solid lightgray;
+            border: 4px solid $light-gray;
             border-radius: 10px;
         }
     }
@@ -124,7 +131,58 @@ body{
         padding-right: 0em;
     }
 
+}
+
+#shop-now-cta button{
+
+    color:$light-gray;
+    background-color:$light-gray;
+    border: 1px solid $light-gray;
+    border-radius: 17px;
+    width: $inner-width;
+    height: 10em;
+}
+
+.product-desc {
+
+    font-family: $font;
+    text-align: left;
+    margin-left: 5.8em;
+    line-height: 300%;
+
+    h3 {
+        color: $heading-color;
+        @include capitalise();
     }
+
+    p {
+        color: $light-gray
+    }
+
+}
+
+.upsell-container {
+
+   // width: $inner-width;
+    margin-left: 5.8em;
+    
+    h2 {
+        text-align: left;
+        color: $heading-color;
+        @include capitalise();
+    }
+
+    img {
+
+        height:15em;
+    }
+}
+
+footer {
+    text-align: right;
+    font-size: 0.6em;
+}
+
 
 .clear {
     clear: both;
