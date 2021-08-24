@@ -4,6 +4,35 @@
 		<title>Kenzo eStore</title>
 		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 		<link rel="stylesheet" href="../sass/styles.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<script>
+			var btn ="<button>Shop Now</button>";
+
+			$(document).ready(function(){
+				
+				$(".upsell-products").hide(1000);
+
+				$(".upsell-section h2").mouseenter(function(){
+					$(".upsell-products").show(1500);
+				});
+
+				$(".upsell-section").mouseleave(function(){
+					$(".upsell-products").hide(1500);
+				});
+
+			    $(".upsell-container").click(function(){
+					$(this).children("button").css("visibility", "visible"); 
+
+			  });
+
+			  $(".upsell-container").mouseleave(function(){
+					$(".upsell-container button").css("visibility", "hidden"); 
+
+			  });
+			});
+		
+		</script> 
 	</head>
 	
 	<body>
@@ -48,19 +77,19 @@
 				<p id="product-price">AED 250</p><br>
 
 				<form id="size-form" action="#">
-  					<span>Available Sizes:</span>  	
-  						<label for="s">S
-							<input type="radio" id="s" name="sizes" value="s">
-						 </label>
-						<label for="m">M
-							 <input type="radio" id="m" name="sizes" value="m">
-						</label>
-						<label for="l">L
-							<input type="radio" id="l" name="sizes" value="l">
-						</label>
-						<label for="xl">XL
-							<input type="radio" id="xl" name="sizes" value="xl">
-						</label>
+  					<span>Available Sizes:</span>  
+
+					  <input type="radio" id="s" name="sizes" value="s" checked>	
+  							<label for="s">S </label>
+
+						<input type="radio" id="m" name="sizes" value="m">
+							<label for="m">M</label>
+
+						<input type="radio" id="l" name="sizes" value="l">
+							<label for="l">L</label>
+
+						<input type="radio" id="xl" name="sizes" value="xl">
+							<label for="xl">XL </label>
 				</form>
 
 				<form id="color-form" action="#">
@@ -101,18 +130,37 @@
 			</div>
 			<br>
 
-			<div class="upsell-container">
+
+			<div class="upsell-section">
 				<h2>See more products</h2>
+
 					<div class="upsell-products">
-						<img src="../assets/product1.jpg"> &nbsp;
-						<img src="../assets/product2.jpg"> &nbsp;
-						<img src="../assets/product3.jpg"> &nbsp;
-						<img src="../assets/product4.jpg">
+
+						<div class="upsell-container">
+							<img src="../assets/product1.jpg">
+							<button>Shop Now</button> 
+						</div>
+					
+						<div class="upsell-container">
+							<img src="../assets/product2.jpg">
+							<button>Shop Now</button> 
+						</div>
+						
+						<div class="upsell-container">
+							<img src="../assets/product3.jpg">
+							<button>Shop Now</button> 
+						</div>
+						
+						<div class="upsell-container">
+							<img src="../assets/product4.jpg">
+							<button>Shop Now</button> 
+						</div>
 					</div>
 			</div>
 	</main>
 
-<br>
+	<div class="clear"></div>
+	<br>
 
 <footer>
 	Created by Alhasan on 2021
