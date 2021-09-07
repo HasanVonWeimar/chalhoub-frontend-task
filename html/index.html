@@ -1,172 +1,168 @@
 <html Lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>Kenzo eStore</title>
-		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-		<link rel="stylesheet" href="../sass/styles.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-		<script>
-			var btn ="<button>Shop Now</button>";
+<head>
+	<meta charset="UTF-8" />
+	<title>Kenzo eStore</title>
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<link rel="stylesheet" href="../sass/styles.css?version=#" id="link"> <!-- linking the stylesheet -->
 
-			$(document).ready(function(){
-				
-				$(".upsell-products").hide(1000);
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- including support for jquery-->
+	<script src="../js/main.js"></script> <!-- linking to JavaScript-->
 
-				$(".upsell-section h2").mouseenter(function(){
-					$(".upsell-products").show(1500);
-				});
 
-				$(".upsell-section").mouseleave(function(){
-					$(".upsell-products").hide(1500);
-				});
+	<script>
 
-			    $(".upsell-container").click(function(){
-					$(this).children("button").css("visibility", "visible"); 
+		$(document).ready(function () {
 
-			  });
+			//get all the data from json
 
-			  $(".upsell-container").mouseleave(function(){
-					$(".upsell-container button").css("visibility", "hidden"); 
+			getInfo();
 
-			  });
-			});
-		
-		</script> 
-	</head>
-	
-	<body>
-		<header>
-			<div id="logo">
-				<img src="../assets/logo.png">
-			</div>
-		</header>
-		
-		<div class="clear"></div>
-		
-		<nav id="navbar">
-			<ul class="nav-elems-container">
-				<li>MEN</li>
-				<li>WOMEN</li>
-				<li>KIDS</li>
-				<li>FTW</li>
-				<li>ACCESSORIES</li>
-			</ul>
-		</nav>
+		});
 
-		<main>
 
-			<div id="search-area">
-				<form action="#" method ="GET" id="search-form">
-					<input id="search-box" type="text" placeholder="Search">
-					<button type="submit" class="search-button">
-						<img src="../assets/search.png">
-				 	 </button>
-				</form>
-			</div>
 
-			<div id="product-image">
-				<img src="../assets/kenzo-kids-girls-red-tiger-logo-t-shirt.jpg">
-			</div>
+	</script>
+</head>
 
+<body>
+	<header>
+		<div id="logo">
+			<img src="../assets/logo.png">
+		</div>
+	</header>
+
+	<div class="clear"></div>
+
+	<!-- navbar section-->
+
+	<nav id="navbar">
+		<ul class="nav-elems-container" id="navbar-elems">
+
+		</ul>
+	</nav>
+
+	<main>
+
+		<div id="search-area">
+			<form action="#" method="GET" id="search-form">
+				<input id="search-box" type="text" placeholder="Search">
+				<button type="submit" class="search-button">
+					<img src="../assets/search.png">
+				</button>
+			</form>
+		</div>
+
+		<!-- Main product section-->
+
+		<div id="product-image">
+		</div>
+
+		<br>
+
+		<div id="product-details">
+
+			<h2 id="product-title"></h2>
+			<p id="product-price"></p><br>
+
+			<form id="size-form" action="#">
+				<!-- transform to div-->
+				<span>Available Sizes:</span> 
+				<!--
+				<input type="radio" id="s" name="sizes" value="s" checked>
+				  <label for="s">S </label>
+
+				<input type="radio" id="m" name="sizes" value="m">
+				<label for="m">M</label>
+
+				<input type="radio" id="l" name="sizes" value="l">
+				<label for="l">L</label>
+
+				<input type="radio" id="xl" name="sizes" value="xl">
+				<label for="xl">XL </label> -->
+			</form>
+
+			<p>Colors:</p>
+			<form id="color-form" action="#">
+				<!-- transform to div-->
+
+
+				<!-- <label>
+					<input type="radio" id="black" name="colors">
+					<img src="../assets/black.png">
+				</label>
+				<label>
+					<input type="radio" id="grey" name="colors">
+					<img src="../assets/grey.png">
+				</label>
+				<label>
+					<input type="radio" id="white" name="colors">
+					<img src="../assets/white.png">
+				</label>
+				<label>
+					<input type="radio" id="emerald" name="colors">
+					<img src="../assets/emerald.png">
+				</label>   -->
+			</form>
+		</div>
+
+		<br>
+
+		<div id="shop-now-cta">
+			<button>Shop Now</button>
+		</div>
+		<br>
+
+		<div class="product-desc" id="product-desc">
+			<h3>Description</h3>
+			<!-- find out what is causing css issue -->
+			<!-- <p>Opt for a bold look with this T-shirt. With it's iconic Tiger print on the chest, it is sure to turn
+				heads. Pair it with jogging trousers and sneakers for a casual sportswear look.</p>
 			<br>
+			<p>Short-sleeved T-shirt.</p>
+			<p>Round neck</p>
+			<p>Tiger embroidered on the chest</p>  -->
+		</div>
+		<br>
 
-			<div id="product-details">
 
-				<h2 id="product-title">Tiger Medium Red</h2>
-				<p id="product-price">AED 250</p><br>
+		<div class="upsell-section">
+			<h2 id="more-products-title" class="expand">See more products</h2>
 
-				<form id="size-form" action="#">
-  					<span>Available Sizes:</span>  
+			<div class="upsell-products" id="upsell-products">
 
-					  <input type="radio" id="s" name="sizes" value="s" checked>	
-  							<label for="s">S </label>
+				<!-- 			<div class="upsell-container">
+					<img src="../assets/product1.jpg">
+					<button>Shop Now</button>
+				</div>
 
-						<input type="radio" id="m" name="sizes" value="m">
-							<label for="m">M</label>
+				<div class="upsell-container">
+					<img src="../assets/product2.jpg">
+					<button>Shop Now</button>
+				</div>
 
-						<input type="radio" id="l" name="sizes" value="l">
-							<label for="l">L</label>
+				<div class="upsell-container">
+					<img src="../assets/product3.jpg">
+					<button>Shop Now</button>
+				</div>
 
-						<input type="radio" id="xl" name="sizes" value="xl">
-							<label for="xl">XL </label>
-				</form>
-
-				<form id="color-form" action="#">
-					<p>Colors:</p>
-						<label>
-							<input type="radio" id="black" name="colors">
-							<img src="../assets/black.png">
-						</label>
-						<label>
-							<input type="radio" id="grey" name="colors">
-							<img src="../assets/grey.png">
-						</label>
-						<label>
-							<input type="radio" id="white" name="colors">
-							<img src="../assets/white.png">
-						</label>
-						<label>
-							<input type="radio" id="emerald" name="colors">
-							<img src="../assets/emerald.png">
-						</label>
-				</form>
+				<div class="upsell-container">
+					<img src="../assets/product4.jpg">
+					<button>Shop Now</button>
+				</div> -->
 			</div>
-
-			<br>
-
-			<div id="shop-now-cta">
-				<button>Shop Now</button>
-			</div>
-			<br>
-
-			<div class="product-desc">
-				<h3>Description</h3>
-				<p>Opt for a bold look with this T-shirt. With it's iconic Tiger print on the chest, it is sure to turn heads. Pair it with jogging trousers and sneakers for a casual sportswear look.</p>
-				<br>
-				<p>Short-sleeved T-shirt.</p>
-				<p>Round neck</p>
-				<p>Tiger embroidered on the chest</p>
-			</div>
-			<br>
-
-
-			<div class="upsell-section">
-				<h2>See more products</h2>
-
-					<div class="upsell-products">
-
-						<div class="upsell-container">
-							<img src="../assets/product1.jpg">
-							<button>Shop Now</button> 
-						</div>
-					
-						<div class="upsell-container">
-							<img src="../assets/product2.jpg">
-							<button>Shop Now</button> 
-						</div>
-						
-						<div class="upsell-container">
-							<img src="../assets/product3.jpg">
-							<button>Shop Now</button> 
-						</div>
-						
-						<div class="upsell-container">
-							<img src="../assets/product4.jpg">
-							<button>Shop Now</button> 
-						</div>
-					</div>
-			</div>
+		</div>
 	</main>
 
 	<div class="clear"></div>
 	<br>
 
-<footer>
-	Created by Alhasan on 2021
-</footer>
+	<footer>
+		Created by Alhasan on 2021
+	</footer>
 
 
-	</body>
+</body>
 
 </html>
