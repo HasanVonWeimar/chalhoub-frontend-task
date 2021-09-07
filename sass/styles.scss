@@ -138,6 +138,13 @@ body{
     }
 }
 
+#product-details p {
+
+    font-size: 3em;
+    color: $light-gray;
+
+}
+
 #size-form {
 
     float: center;
@@ -169,6 +176,7 @@ body{
 
     h3 {
         color: $heading-color;
+        font-size: 2em;
         @include capitalise();
     }
 
@@ -186,6 +194,7 @@ body{
     
     h2 {
         margin-left: 5.8em;
+        font-size: 2em;
         text-align: left;
         color: $heading-color;
         @include capitalise();
