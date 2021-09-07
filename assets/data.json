@@ -1,0 +1,44 @@
+[
+    {
+        "element": "nav",
+        "content": [
+            "MEN",
+            "WOMEN",
+            "KIDS",
+            "FTW",
+            "ACCESSORIES"
+        ]
+    },
+    {
+        "element": "product",
+        "name": "kenzo-red-shirt",
+        "properties": {
+            "sku": "SKU001",
+            "title": "Tiger Medium Red",
+            "image": "SKU001.jpg",
+            "price": "250",
+            "longDesc": "Opt for a bold look with this T-shirt. With it's iconic Tiger print on the chest, it is sure to turn heads. Pair it with jogging trousers and sneakers for a casual sportswear look.",
+            "type1": "Short-sleeved T-shirt.",
+            "type2": "Round neck",
+            "shortDesc": "Tiger embroidered on the chest"
+        },
+        "variants": {
+            "black": "black.png",
+            "grey": "grey.png",
+            "white": "white.png",
+            "emerald": "emerald.png"
+        },
+        "sizes": [
+            "s",
+            "m",
+            "l",
+            "xl"
+        ],
+        "upsells": {
+            "product1": "product1.jpg",
+            "product2": "product2.jpg",
+            "product3": "product3.jpg",
+            "product4": "product4.jpg"
+        }
+    }
+]
